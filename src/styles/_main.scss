@@ -1,0 +1,36 @@
+@use "./reset";
+
+*,
+::before,
+::after {
+    transition: all linear 100ms;
+
+    @media (prefers-reduced-motion) {
+        transition-property: unset;
+    }
+}
+
+:root {
+    --color-bg: rgb(255, 255, 255);
+    --color-ln: rgb(0, 0, 0);
+
+    font-family: system-ui, sans-serif;
+    font-size: 20px;
+
+    background-color: var(--color-bg);
+    color: var(--color-ln);
+
+    @media (prefers-color-scheme: dark) {
+        --color-bg: rgb(0, 0, 0);
+        --color-ln: rgb(255, 255, 255);
+    }
+}
+
+strong {
+    font-style: italic;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
